@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Your Team</title>
+    <link rel="stylesheet" href="register.css">
+</head>
+
+<body>
+    <div class="registration">
+        <h1>REGISTER YOUR TEAM</h1>
+
+        <form id="teamForm">
+
+            <label for="teamName">Team Name</label>
+            <input type="text" id="teamName"
+                   placeholder="Enter team name" required>
+
+            <label for="player1">Player 1 (Team Leader)</label>
+            <input type="text" id="player1"
+                   placeholder="Enter team leader name" required>
+
+            <label for="player2">Player 2</label>
+            <input type="text" id="player2"
+                   placeholder="Enter player 2 name" required>
+
+            <label for="player3">Player 3 (Optional)</label>
+            <input type="text" id="player3"
+                   placeholder="Enter player 3 name (optional)">
+
+            <label for="player4">Player 4 (Optional)</label>
+            <input type="text" id="player4"
+                   placeholder="Enter player 4 name (optional)">
+
+            <button type="submit">REGISTER</button>
+
+        </form>
+
+        <p id="successMessage" aria-live="polite"></p>
+
+        <a href="instructions.html">Back to Instructions</a>
+    </div>
+
+    <script>
+        document.getElementById("teamForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            document.getElementById("successMessage").textContent =
+                "🎉 Registration Successful! Your team is ready for the Treasure Hunt!";
+
+            document.getElementById("successMessage").style.color = "#90EE90";
+            document.getElementById("successMessage").style.fontWeight = "bold";
+        });
+    </script>
+
+</body>
+</html>

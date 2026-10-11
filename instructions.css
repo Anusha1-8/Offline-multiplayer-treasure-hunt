@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Courier New", monospace;
+    color: white;
+    background-image: url("./ins.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-color: #100044;
+}
+
+.page-overlay {
+    min-height: 100vh;
+    padding: 45px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(10, 0, 50, 0.58);
+}
+
+.content {
+    width: 100%;
+    max-width: 760px;
+    text-align: center;
+}
+
+h1 {
+    color: #ffe6ff;
+    font-size: clamp(30px, 5vw, 48px);
+    margin-bottom: 30px;
+    text-shadow: 3px 3px #7b24d9;
+}
+
+.instructions-box {
+    padding: 25px;
+    border: 2px solid #bd7aff;
+    border-radius: 12px;
+    background: rgba(23, 5, 75, 0.82);
+    box-shadow: 0 0 22px rgba(190, 100, 255, 0.35);
+    text-align: left;
+}
+
+.instructions-box p {
+    font-size: clamp(14px, 2.5vw, 19px);
+    line-height: 1.6;
+    margin: 12px 0;
+}
+
+button {
+    margin-top: 28px;
+    padding: 16px 28px;
+    border: 2px solid #e6b5ff;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #9d26f0, #5900bb);
+    color: white;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 0 #350078;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 0 #350078;
+}
+
+.back-link {
+    margin-top: 25px;
+}
+
+.back-link a {
+    color: #e8c7ff;
+    text-decoration: none;
+}
+
+.registration {
+    display: none;
+    max-width: 500px;
+    margin: 0 auto 50px;
+    padding: 28px 20px;
+    width: calc(100% - 32px);
+    border: 2px solid #bd7aff;
+    border-radius: 12px;
+    background: rgba(23, 5, 75, 0.94);
+    text-align: center;
+}
+
+.registration.show {
+    display: block;
+}
+
+.registration h2 {
+    margin-bottom: 22px;
+    color: #ffe6ff;
+    font-size: 25px;
+}
+
+.registration input,
+.registration textarea {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    margin: 14px 0;
+    border: 1px solid #bd7aff;
+    border-radius: 6px;
+    background: #16083d;
+    color: white;
+    font: inherit;
+}
+
+.registration textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.registration input::placeholder,
+.registration textarea::placeholder {
+    color: #d0bce8;
+}
+
+#successMessage {
+    margin-top: 18px;
+    color: #d9ffc8;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 480px) {
+    .page-overlay {
+        padding: 30px 16px;
+    }
+
+    .instructions-box {
+        padding: 16px;
+    }
+
+    button {
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treasure Hunt - Instructions</title>
+    <link rel="stylesheet" href="instructions.css">
+</head>
+<body>
+
+    <div class="page-overlay">
+        <main class="content">
+            <h1>INSTRUCTIONS</h1>
+
+            <div class="instructions-box">
+                <p>01. Register your team to begin.</p>
+                <p>02. Read each clue carefully.</p>
+                <p>03. Scan the QR codes  to discover the next location.</p>
+                <p>04. Work together with your teammates.</p>
+                <p>05. Solve all the clues, complete the challenge, and be the winning team!</p>
+            </div>
+
+            <button id="registerBtn"
+        onclick="window.location.href='register.html'">
+    REGISTER YOUR TEAM
+</button>
+
+            <p class="back-link">
+                <a href="index.html">← Back to Home</a>
+            </p>
+        </main>
+    </div>
+
+    <script>
+        document.getElementById("registerBtn").addEventListener("click", () => {
+            document.getElementById("registration").classList.add("show");
+            document.getElementById("registration").scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+        });
+
+        document.getElementById("teamForm").addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            const teamName = document.getElementById("teamName").value.trim();
+            const leaderName = document.getElementById("leaderName").value.trim();
+            const members = document.getElementById("members").value.trim();
+
+            if (!teamName || !leaderName || !members) {
+                return;
+            }
+
+            document.getElementById("successMessage").textContent =
+                "Team details entered successfully! Connect a backend to save registrations.";
+        });
+    </script>
+
+    <section id="registration" class="registration">
+        <h2>REGISTER YOUR TEAM</h2>
+        <form id="teamForm">
+            <input id="teamName" type="text" placeholder="Enter Team Name" required>
+            <input id="leaderName" type="text" placeholder="Team Leader Name" required>
+            <textarea id="members" placeholder="Enter Team Members' Names" required></textarea>
+            <button type="submit">SUBMIT TEAM</button>
+        </form>
+        <p id="successMessage" aria-live="polite"></p>
+    </section>
+
+</body>
+</html>
