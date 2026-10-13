@@ -31,41 +31,7 @@
         </main>
     </div>
 
-    <script>
-        document.getElementById("registerBtn").addEventListener("click", () => {
-            document.getElementById("registration").classList.add("show");
-            document.getElementById("registration").scrollIntoView({
-                behavior: "smooth",
-                block: "center"
-            });
-        });
-
-        document.getElementById("teamForm").addEventListener("submit", (event) => {
-            event.preventDefault();
-
-            const teamName = document.getElementById("teamName").value.trim();
-            const leaderName = document.getElementById("leaderName").value.trim();
-            const members = document.getElementById("members").value.trim();
-
-            if (!teamName || !leaderName || !members) {
-                return;
-            }
-
-            document.getElementById("successMessage").textContent =
-                "Team details entered successfully! Connect a backend to save registrations.";
-        });
-    </script>
-
-    <section id="registration" class="registration">
-        <h2>REGISTER YOUR TEAM</h2>
-        <form id="teamForm">
-            <input id="teamName" type="text" placeholder="Enter Team Name" required>
-            <input id="leaderName" type="text" placeholder="Team Leader Name" required>
-            <textarea id="members" placeholder="Enter Team Members' Names" required></textarea>
-            <button type="submit">SUBMIT TEAM</button>
-        </form>
-        <p id="successMessage" aria-live="polite"></p>
-    </section>
+  
 
 </body>
 </html>
